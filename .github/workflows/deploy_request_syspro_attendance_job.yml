@@ -19,12 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: $GCP_WORKLOAD_IDENTIFY_PROVIDER
-          service_account: $GCP_SERVICE_ACCOUNT_MAIL_ADDRESS
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTIFY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_MAIL_ADDRESS }}
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v0'
