@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -23,6 +24,7 @@ func Run() error {
 		w.WriteHeader(http.StatusOK)
 	})
 
+	log.Printf("Listening on port %s", port)
 	return http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
 
