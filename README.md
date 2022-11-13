@@ -9,3 +9,4 @@ cmd
     └── run.go
 ```
 
+これらのエンドポイントを CloudRun へデプロイし、CloudScheduler で毎週の講義前に定期実行する。
