@@ -45,4 +45,5 @@ jobs:
             --port $PORT \
             --project $GCP_PROJECT_ID \
             --region $GCP_REGION \
+            --platform=managed \
             --quiet
