@@ -20,6 +20,7 @@ FROM debian:bullseye-slim
 WORKDIR /app
 
 ENV TZ Asia/Tokyo
+ENV PORT 80
 
 RUN apt-get update && apt-get install -y \
   ca-certificates \
@@ -29,6 +30,8 @@ RUN apt-get update && apt-get install -y \
 COPY --from=build /app/bin/ /app/bin/
 ENV PATH /app/bin:$PATH
 RUN chmod +x /app/bin/*
+
+EXPOSE 80
 
 CMD ["request_syspro_attendance_job"]
 # ------------------------------------------
