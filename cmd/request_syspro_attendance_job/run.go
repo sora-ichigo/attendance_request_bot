@@ -31,6 +31,10 @@ func Run() error {
 
 	client := &http.Client{}
 	res, err := client.Do(req)
+	if err != nil {
+		return err
+	}
+
 	if res.StatusCode != http.StatusOK {
 		return fmt.Errorf("bad status: %v", res.Status)
 	}
