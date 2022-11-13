@@ -10,3 +10,5 @@ cmd
 ```
 
 これらのエンドポイントを CloudRun へデプロイし、CloudScheduler で毎週の講義前に定期実行する。
+
+- [📝 CloudRun & CloudScheduler Resources](https://github.com/search?q=repo%3Aigsr5%2Figsr5-terraform%20attendance_request_bot&type=code)
