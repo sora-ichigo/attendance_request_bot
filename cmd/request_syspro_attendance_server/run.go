@@ -23,7 +23,7 @@ func Run() error {
 		w.WriteHeader(http.StatusOK)
 	})
 
-	return http.ListenAndServe(port, nil)
+	return http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
 
 func pushMessage() error {
