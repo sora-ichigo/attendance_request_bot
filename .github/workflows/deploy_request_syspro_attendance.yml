@@ -1,4 +1,4 @@
-name: Deploy `Request SysPro Attendance Job`
+name: Deploy `Request SysPro Attendance`
 on:
   push:
     # branches:
@@ -33,7 +33,7 @@ jobs:
         run: gcloud auth configure-docker --quiet
 
       - name: 'Build'
-        run: docker build -f request_syspro_attendance_job.Dockerfile -t $IMAGE .
+        run: docker build -f request_syspro_attendance.Dockerfile -t $IMAGE .
 
       - name: 'Push the docker image'
         run: docker push $IMAGE

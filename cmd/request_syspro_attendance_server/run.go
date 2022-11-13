@@ -10,6 +10,23 @@ import (
 var targetURL = "https://api.line.me/v2/bot/message/broadcast"
 
 func Run() error {
+	port := os.Getenv("PORT")
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		err := pushMessage()
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(err.Error()))
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
+	})
+
+	return http.ListenAndServe(port, nil)
+}
+
+func pushMessage() error {
 	channelAccessToken := os.Getenv("CHANNEL_ACCESS_TOKEN")
 
 	body := []byte(`{
@@ -40,4 +57,5 @@ func Run() error {
 	}
 
 	return nil
+
 }
