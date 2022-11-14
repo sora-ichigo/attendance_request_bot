@@ -33,5 +33,5 @@ RUN chmod +x /app/bin/*
 
 EXPOSE 80
 
-CMD ["request_syspro_attendance_server"]
+CMD ["request_attendance_server"]
 # ------------------------------------------
