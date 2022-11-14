@@ -6,7 +6,7 @@
 
 ```sh
 cmd
-└── request_syspro_attendance_job # シスプロの出席を依頼するJob
+└── request_attendance_server # 各講義の出席依頼を発行するサーバー
     ├── main.go
     └── run.go
 ```

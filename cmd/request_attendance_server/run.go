@@ -37,10 +37,10 @@ func pushMessage() error {
 
 	body := []byte(`{
     "messages": [
-      {
-        "type":"text",
-        "text":"シスプロの出席お願いしてもいい？"
-      }
+    {
+      "type":"text",
+      "text":"シスプロの出席お願いしてもいい？"
+    }
     ]
   }`)
 
