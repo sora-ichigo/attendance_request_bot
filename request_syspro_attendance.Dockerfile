@@ -1,6 +1,6 @@
 # build stage
 # ------------------------------------------
-FROM golang:1.19.3-bullseye AS build
+FROM golang:1.24.6-bullseye AS build
 
 WORKDIR /app
 COPY . .
